@@ -8,3 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - run: |
+        echo "stopping"
+        exit 1
+  job2:
+    runs-on: ubuntu-latest
+    needs: [job1]
+    steps:
+    - uses: actions/checkout@v4
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
